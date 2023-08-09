@@ -5,7 +5,7 @@ import random
 import argparse
 import numpy as np
 import wandb
-wandb.login(key="dcca2cef44e7ddb84ce9477599eb35bea544c2c1")
+wandb.login(key="type your api key")
 
 import torch
 import torch.nn as nn

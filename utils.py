@@ -50,12 +50,12 @@ def train_eval_roop(
         total_cls_loss.update(to_python_float(reduced_loss_cls), batch)
         total_dis_loss.update(to_python_float(reduced_loss_dis), batch)
 
-        wandb.log({
-                'train_total_loss': to_python_float(reduced_loss),
-                'train_cls_loss': to_python_float(reduced_loss_cls),
-                'train_dis_loss': to_python_float(reduced_loss_dis),
-                'lambda': reduce_tensor(lam.mean().data, args.world_size).item()
-            })
+        #wandb.log({
+        #        'train_total_loss': to_python_float(reduced_loss),
+        #        'train_cls_loss': to_python_float(reduced_loss_cls),
+        #        'train_dis_loss': to_python_float(reduced_loss_dis),
+        #        'lambda': reduce_tensor(lam.mean().data, args.world_size).item()
+        #    })
         
         if args.rank == 0 and batch_index % 100 == 0:
             print('%d epochs [%d/%d]\tloss: %.4f (avg: %.4f)\tLR: %.5f\telapsed_time: %.4f' % (
